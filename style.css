@@ -1,0 +1,47 @@
+/* Estilos básicos: cores, tipografia, espaçamento e bordas. */
+* { box-sizing: border-box; }
+body { margin: 0; background: #090b0c; color: #f3f5f3; font-family: Arial, sans-serif; line-height: 1.6; }
+a { color: inherit; text-decoration: none; }
+.topo, main, footer { width: 88%; max-width: 1100px; margin: 0 auto; }
+/* Grid também organiza o cabeçalho e a apresentação, sem Flexbox. */
+.topo { display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 24px 0; border-bottom: 1px solid #293032; }
+.marca { font-size: 26px; font-weight: bold; color: #a2f0bd; }
+.link-topo { text-align: right; font-size: 14px; }
+.apresentacao { display: grid; grid-template-columns: 1.3fr 1fr; gap: 64px; align-items: center; padding: 64px 0 80px; }
+.etiqueta { color: #a2f0bd; font-size: 12px; letter-spacing: 3px; font-weight: bold; margin: 0 0 14px; }
+h1 { font-size: 64px; line-height: 1.08; letter-spacing: -2px; margin: 0 0 24px; }
+h1 span { color: #a2f0bd; }
+.resumo { color: #b6bec0; max-width: 530px; margin-bottom: 30px; }
+.botao { display: inline-block; background: #a2f0bd; color: #102019; padding: 13px 20px; border-radius: 6px; font-size: 14px; font-weight: bold; }
+/* Transition deixa a mudança de cor do botão suave em 0,3 segundo. */
+.botao { transition: background-color 0.3s; }
+.botao:hover, .botao:focus-visible { background-color: #d0ffdf; }
+figure { margin: 0; }
+/* object-fit evita distorcer a foto; object-position escolhe o enquadramento.
+   Referência complementar: https://developer.mozilla.org/pt-BR/docs/Web/CSS/object-fit */
+.foto { width: 100%; height: 400px; object-fit: cover; object-position: center 38%; border-radius: 12px; border: 1px solid #34433d; animation: aparecer 1s ease-out; }
+figcaption { margin-top: 12px; color: #929f9c; font-size: 12px; }
+/* A foto aparece automaticamente, saindo de transparente e um pouco abaixo. */
+@keyframes aparecer { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+h2 { font-size: 32px; line-height: 1.2; margin: 0 0 12px; }
+.introducao { color: #b6bec0; margin: 0 0 30px; }
+.grade { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.card { background: #121617; border: 1px solid #293032; border-radius: 10px; overflow: hidden; }
+/* Transition suaviza o movimento e a troca da cor da borda. */
+.card { transition: transform 0.3s ease, border-color 0.3s ease; }
+/* TranslateY sobe 7px; scale aumenta o card em 2%. */
+.card:hover { transform: translateY(-7px) scale(1.02); border-color: #a2f0bd; }
+.card img { display: block; width: 100%; height: auto; }
+.conteudo-card { padding: 22px; }
+.numero { color: #a2f0bd; font-size: 12px; }
+h3 { font-size: 21px; margin: 6px 0 10px; }
+.card p { font-size: 14px; color: #b6bec0; margin: 0; }
+footer { margin-top: 64px; padding: 26px 0; border-top: 1px solid #293032; font-size: 13px; }
+footer span { color: #929f9c; font-size: 12px; }
+/* Media queries ajustam as colunas conforme a largura da tela.
+   Referência complementar: https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_media_queries/Using_media_queries */
+@media (max-width: 850px) { .apresentacao { gap: 30px; } h1 { font-size: 46px; } .grade { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 580px) { .apresentacao { grid-template-columns: 1fr; padding: 42px 0 55px; } h1 { font-size: 42px; } .foto { height: 360px; } .grade { grid-template-columns: 1fr; } h2 { font-size: 28px; } }
+/* Respeita a preferência de quem reduz movimento no sistema.
+   Referência complementar: https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) { .foto { animation: none; } .card, .botao { transition: none; } .card:hover { transform: none; } }
