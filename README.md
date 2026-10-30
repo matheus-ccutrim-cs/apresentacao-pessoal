@@ -98,7 +98,7 @@ Mantenha `index.html` e `style.css` na raiz e preserve a pasta `imagens`, pois o
 O projeto foi preparado para hospedagem estática e publicação no **Vercel**, a partir do repositório do GitHub. Não possui etapa de compilação ou variáveis de ambiente.
 
 - **Repositório:** [apresentacao-pessoal](https://github.com/matheus-ccutrim-cs/apresentacao-pessoal)
-- **Página no Vercel:** publicação pendente.
+- - **Página no Vercel:** [Acessar apresentação pessoal](https://apresentacao-pessoal-olive.vercel.app/).
 
 ## Identificação acadêmica
 
